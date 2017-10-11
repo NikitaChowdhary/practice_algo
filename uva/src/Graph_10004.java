@@ -4,24 +4,14 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 public class Graph_10004 {
-    static class Pair {
-        int a;
-        boolean color;
-        Pair(int a, boolean c){
-            this.a = a;
-            this.color = c;
-        }
-    }
-
-
     private static Map<Integer, Boolean> isVisitedColor = new HashMap<>();
     private static Queue<Pair> visited = new LinkedList<>();
     private static Map<Integer, List<Integer>> graph = new HashMap<>();
 
     private static boolean isBicolorable(Map<Integer, List<Integer>> graph) {
-        visited.add(new Pair(0,false));
+        visited.add(new Pair(0, false));
         isVisitedColor.put(0, false);
-        while(!visited.isEmpty()) {
+        while (!visited.isEmpty()) {
             Pair current = visited.poll();
             if (graph.containsKey(current.a)) {
                 List<Integer> adjacent = graph.get(current.a);
@@ -41,12 +31,12 @@ public class Graph_10004 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        while(true) {
+        while (true) {
             resetResources();
             int nodes = Integer.parseInt(reader.readLine());
-            if(nodes == 0) break;
+            if (nodes == 0) break;
             int edges = Integer.parseInt(reader.readLine());
-            while(edges-- != 0) {
+            while (edges-- != 0) {
                 String[] edge = reader.readLine().split(" ");
                 List<Integer> adjacentNodes = new LinkedList<>();
                 int start_vertex = Integer.parseInt(edge[0]);
@@ -57,7 +47,7 @@ public class Graph_10004 {
                 adjacentNodes.add(end_vertex);
                 graph.put(start_vertex, adjacentNodes);
             }
-            if(isBicolorable(graph))
+            if (isBicolorable(graph))
                 System.out.println("BICOLORABLE.");
             else
                 System.out.println("NOT BICOLORABLE.");
@@ -68,6 +58,16 @@ public class Graph_10004 {
         isVisitedColor = new HashMap<>();
         visited = new LinkedList<>();
         graph = new HashMap<>();
+    }
+
+    static class Pair {
+        int a;
+        boolean color;
+
+        Pair(int a, boolean c) {
+            this.a = a;
+            this.color = c;
+        }
     }
 
 }
