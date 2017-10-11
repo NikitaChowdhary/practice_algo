@@ -1,13 +1,8 @@
-import common.Graph;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-/**
- * Created by nikitachowdhary on 11/10/2017.
- */
 public class Graph_10004 {
     static class Pair {
         int a;
@@ -19,17 +14,17 @@ public class Graph_10004 {
     }
 
 
-    private static Map<Integer, Boolean> isVisitedColor = new HashMap<Integer, Boolean>();
-    private static Queue<Pair> visited = new LinkedList<Pair>();
-    private static Graph graph = new Graph();
+    private static Map<Integer, Boolean> isVisitedColor = new HashMap<>();
+    private static Queue<Pair> visited = new LinkedList<>();
+    private static Map<Integer, List<Integer>> graph = new HashMap<>();
 
-    private static boolean isBicolorable(Graph graph) {
+    private static boolean isBicolorable(Map<Integer, List<Integer>> graph) {
         visited.add(new Pair(0,false));
         isVisitedColor.put(0, false);
         while(!visited.isEmpty()) {
             Pair current = visited.poll();
-            if (graph.adjacenyList.containsKey(current.a)) {
-                List<Integer> adjacent = graph.adjacenyList.get(current.a);
+            if (graph.containsKey(current.a)) {
+                List<Integer> adjacent = graph.get(current.a);
                 for (int node : adjacent) {
                     if (isVisitedColor.containsKey(node) && isVisitedColor.get(node) == current.color) {
                         return false;
@@ -56,11 +51,11 @@ public class Graph_10004 {
                 List<Integer> adjacentNodes = new LinkedList<>();
                 int start_vertex = Integer.parseInt(edge[0]);
                 int end_vertex = Integer.parseInt(edge[1]);
-                if (graph.adjacenyList.containsKey(start_vertex)) {
-                    adjacentNodes = graph.adjacenyList.get(start_vertex);
+                if (graph.containsKey(start_vertex)) {
+                    adjacentNodes = graph.get(start_vertex);
                 }
                 adjacentNodes.add(end_vertex);
-                graph.adjacenyList.put(start_vertex, adjacentNodes);
+                graph.put(start_vertex, adjacentNodes);
             }
             if(isBicolorable(graph))
                 System.out.println("BICOLORABLE.");
@@ -70,9 +65,9 @@ public class Graph_10004 {
     }
 
     private static void resetResources() {
-        isVisitedColor = new HashMap<Integer, Boolean>();
-        visited = new LinkedList<Pair>();
-        graph = new Graph();
+        isVisitedColor = new HashMap<>();
+        visited = new LinkedList<>();
+        graph = new HashMap<>();
     }
 
 }
