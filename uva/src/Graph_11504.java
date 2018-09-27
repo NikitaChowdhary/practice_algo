@@ -44,6 +44,8 @@ public class Graph_11504 {
 
         Map<Integer, List<Integer>> transpose = getTransposedGraph(graph);
 
+        System.out.println(graph);
+        System.out.println(transpose);
         List<Integer> transposeVisited = new LinkedList<>();
         int totalComponents = 0;
         for ( int i = visited.size() - 1; i>=0; i-- ) {
@@ -51,6 +53,10 @@ public class Graph_11504 {
             if(!transposeVisited.contains(current)) {
                 totalComponents++;
                 dfs(transpose, transposeVisited, current);
+                System.out.println(transposeVisited);
+                int[] test = new int[2];
+                test.length;
+                test[]
             }
         }
         return totalComponents;
@@ -71,13 +77,13 @@ public class Graph_11504 {
     }
 
     private static void dfs (Map<Integer, List<Integer>> graph, List<Integer> visited, int start) {
+        visited.add(start);
         if(graph.containsKey(start)) {
             for (int current: graph.get(start)) {
                 if(!visited.contains(current))
                     dfs(graph, visited, current);
             }
         }
-        visited.add(start);
     }
 
 }
