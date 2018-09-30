@@ -57,8 +57,8 @@ public class Graph_11504 {
                 dfs(transpose, transposeVisited, current);
                 System.out.println(transposeVisited);
                 int[] test = new int[2];
-                test.length;
-                test[]
+                return test.length;
+//                test[]
             }
         }
         return totalComponents;

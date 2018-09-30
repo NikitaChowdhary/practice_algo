@@ -6,10 +6,10 @@ public class TreeNode {
     public TreeNode left;
     public TreeNode right;
 
-    public TreeNode(int val, TreeNode left, TreeNode right) {
+    public TreeNode(int val) {
         this.val = val;
-        this.left = left;
-        this.right = right;
+        this.left = null;
+        this.right = null;
     }
 
     public boolean isLeaf(TreeNode node) {
