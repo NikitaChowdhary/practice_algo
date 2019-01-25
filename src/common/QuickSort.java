@@ -1,6 +1,10 @@
 package common;
 
 public class QuickSort {
+
+    // Best case O(nlog n)
+    // Average case O(nlog n)
+    // Worst case Time complexity O(n2)
     public static void main(String[] args) {
         int[] array = {12, 11, 13, 5, 6};
 

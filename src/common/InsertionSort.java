@@ -2,6 +2,7 @@ package common;
 
 public class InsertionSort {
 
+    // Time complexity O(n2)
     public static void main(String[] args) {
         int[] array = {12, 11, 13, 5, 6};
 

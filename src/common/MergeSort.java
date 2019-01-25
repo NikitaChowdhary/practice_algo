@@ -1,6 +1,7 @@
 package common;
 
 public class MergeSort {
+    // Time complexity O(nlog n)
     public static void main(String[] args) {
         int[] array = {12, 11, 13, 5, 6};
         mergeSort(array, 0, array.length - 1);
