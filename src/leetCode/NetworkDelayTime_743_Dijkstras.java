@@ -2,7 +2,7 @@ package leetCode;
 
 import java.util.*;
 
-public class NetworkDelayTime_743 {
+public class NetworkDelayTime_743_Dijkstras {
 
     int maxCost = 1000000;
     class Edge {
@@ -81,7 +81,7 @@ public class NetworkDelayTime_743 {
 
         int[][] times = {{2,1,1},{2,3,1},{3,4,1}};
 
-        System.out.println(new NetworkDelayTime_743().networkDelayTime(times, 4, 2));
+        System.out.println(new NetworkDelayTime_743_Dijkstras().networkDelayTime(times, 4, 2));
 
 
     }

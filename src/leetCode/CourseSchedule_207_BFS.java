@@ -2,7 +2,7 @@ package leetCode;
 
 import java.util.*;
 
-public class CourseSchedule_207 {
+public class CourseSchedule_207_BFS {
 
     class Result{
         boolean res = true;
@@ -57,6 +57,6 @@ public class CourseSchedule_207 {
 //        int courses = 2;
 //        int[][] pre = {{1,0}, {0,1}};
 
-        System.out.println(new CourseSchedule_207().canFinish(courses, pre));
+        System.out.println(new CourseSchedule_207_BFS().canFinish(courses, pre));
     }
 }

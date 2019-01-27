@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-public class CourseSchedule2_210 {
+public class CourseSchedule2_210_Topological {
     public int[] findOrder(int numCourses, int[][] prerequisites) {
         Map<Integer, List<Integer>> graph = new HashMap<>();
         for (int i = 0; i < numCourses; i++) {
@@ -62,7 +62,7 @@ public class CourseSchedule2_210 {
         int num = 4;
         int[][] pre = {{1,0}, {2,0}, {3,1}, {3,2}};
         int[][] pre1 = {{0,1}};
-        int[] res = new CourseSchedule2_210().findOrder(2, pre1);
+        int[] res = new CourseSchedule2_210_Topological().findOrder(2, pre1);
         for (int i: res) {
             System.out.print(i);
         }

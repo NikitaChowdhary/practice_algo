@@ -3,7 +3,7 @@ package leetCode;
 import java.util.LinkedList;
 import java.util.List;
 
-public class FreindCircle_547 {
+public class StronglyConnected_FriendCircle_547 {
     public int findCircleNum(int[][] M) {
         List<Integer> visitingOrder = new LinkedList<>();
         boolean[] visited = new boolean[M.length];
@@ -49,6 +49,6 @@ public class FreindCircle_547 {
 
     public static void main(String[] args) {
         int[][] input = {{1, 1, 0}, {1, 1, 1}, {0, 1, 1}};
-        System.out.println(new FreindCircle_547().findCircleNum(input));
+        System.out.println(new StronglyConnected_FriendCircle_547().findCircleNum(input));
     }
 }

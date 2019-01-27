@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-class WormHoles_558 {
+class Bellman_Ford_WormHoles_558 {
     // https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&category=7&problem=499
 
     public static void main(String[] args) throws IOException {
