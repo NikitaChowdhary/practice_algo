@@ -26,15 +26,16 @@ public class ProtectSheep_948A {
 
 
         boolean result = true;
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < col; j++) {
+        for (int i = 0; i < rows && result; i++) {
+            for (int j = 0; j < col && result; j++) {
                 if (graph[i][j] == 'W') {
                     // Replace all adjacent with D, if any adjacent has S return "no"
-                    result = checkAndReplace(graph, i - 1, j) &&
-                            checkAndReplace(graph, i + 1, j) &&
-                            checkAndReplace(graph, i, j - 1) &&
-                            checkAndReplace(graph, i, j + 1);
-                    if (!result) break;
+                    boolean top = checkAndReplace(graph, i - 1, j);
+                    boolean bottom = checkAndReplace(graph, i + 1, j);
+                    boolean left = checkAndReplace(graph, i, j - 1);
+                    boolean right = checkAndReplace(graph, i, j + 1);
+                    result =  result && top && bottom && left && right;
+//                    if (!result) break;
                 }
             }
         }
