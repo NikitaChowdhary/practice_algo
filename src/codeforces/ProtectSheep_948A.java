@@ -3,6 +3,8 @@ package codeforces;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.List;
 
 public class ProtectSheep_948A {
 
@@ -15,29 +17,30 @@ public class ProtectSheep_948A {
         String[] dimension = in.readLine().split(" ");
         rows = Integer.parseInt(dimension[0]);
         col = Integer.parseInt(dimension[1]);
+        List<Pair> wolfLocation = new LinkedList<>();
 
         char[][] graph = new char[rows][col];
         for (int i = 0; i < rows; i++) {
             String row = in.readLine();
             for (int j = 0; j < col; j++) {
-                graph[i][j] = row.charAt(j);
+                char c = row.charAt(j);
+                if (c == 'W')
+                    wolfLocation.add(new Pair(i, j));
+                graph[i][j] = c;
             }
         }
 
 
         boolean result = true;
-        for (int i = 0; i < rows && result; i++) {
-            for (int j = 0; j < col && result; j++) {
-                if (graph[i][j] == 'W') {
-                    // Replace all adjacent with D, if any adjacent has S return "no"
-                    boolean top = checkAndReplace(graph, i - 1, j);
-                    boolean bottom = checkAndReplace(graph, i + 1, j);
-                    boolean left = checkAndReplace(graph, i, j - 1);
-                    boolean right = checkAndReplace(graph, i, j + 1);
-                    result =  result && top && bottom && left && right;
-//                    if (!result) break;
-                }
-            }
+        for (Pair wolf: wolfLocation) {
+            int i = wolf.i;
+            int j = wolf.j;
+            result =  result
+                    && checkAndReplace(graph, i - 1, j)
+                    && checkAndReplace(graph, i + 1, j)
+                    && checkAndReplace(graph, i, j - 1)
+                    && checkAndReplace(graph, i, j + 1);
+            if (!result) break;
         }
 
         if (result) {
@@ -52,6 +55,15 @@ public class ProtectSheep_948A {
             System.out.println("No");
         }
 
+    }
+
+    static class Pair {
+        int i;
+        int j;
+        Pair(int i, int j) {
+            this.i = i;
+            this.j = j;
+        }
     }
 
     private static boolean checkAndReplace(char[][] graph, int i, int j) {
