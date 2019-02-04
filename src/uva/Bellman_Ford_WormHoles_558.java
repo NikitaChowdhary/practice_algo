@@ -1,4 +1,4 @@
-package uva.src;
+package uva;
 
 import java.io.BufferedReader;
 import java.io.IOException;
