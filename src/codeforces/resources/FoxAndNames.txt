@@ -1,0 +1,201 @@
+3
+rivest
+shamir
+adleman
+
+Output
+bcdefghijklmnopqrsatuvwxyz
+Answer
+bcdefghijklmnopqrsatuvwxyz
+Checker Log
+ok valid answer.
+Test: #2, time: 78 ms., memory: 0 KB, exit code: 0, checker exit code: 0, verdict: OK
+
+Input
+
+10
+tourist
+petr
+wjmzbmr
+yeputons
+vepifanov
+scottwu
+oooooooooooooooo
+subscriber
+rowdark
+tankengineer
+
+Output
+Impossible
+Answer
+Impossible
+
+Checker Log
+ok valid answer.
+Test: #3, time: 77 ms., memory: 0 KB, exit code: 0, checker exit code: 0, verdict: OK
+
+Input
+
+10
+petr
+egor
+endagorion
+feferivan
+ilovetanyaromanova
+kostka
+dmitriyh
+maratsnowbear
+bredorjaguarturnik
+cgyforever
+
+Output
+aghjlnopefikdmbcqrstuvwxyz
+Answer
+aghjlnopefikdmbcqrstuvwxyz
+Checker Log
+ok valid answer.
+Test: #4, time: 61 ms., memory: 0 KB, exit code: 0, checker exit code: 0, verdict: OK
+
+Input
+
+7
+car
+care
+careful
+carefully
+becarefuldontforgetsomething
+otherwiseyouwillbehacked
+goodluck
+
+Output
+acbdefhijklmnogpqrstuvwxyz
+Answer
+acbdefhijklmnogpqrstuvwxyz
+
+Checker Log
+ok valid answer.
+Test: #5, time: 92 ms., memory: 0 KB, exit code: 0, checker exit code: 0, verdict: OK
+
+Input
+
+2
+a
+aa
+
+Output
+abcdefghijklmnopqrstuvwxyz
+Answer
+abcdefghijklmnopqrstuvwxyz
+Checker Log
+ok valid answer.
+Test: #6, time: 124 ms., memory: 0 KB, exit code: 0, checker exit code: 0, verdict: OK
+
+Input
+
+6
+ax
+ay
+by
+bz
+cz
+cx
+
+Output
+Impossible
+Answer
+Impossible
+Checker Log
+ok valid answer.
+Test: #7, time: 109 ms., memory: 0 KB, exit code: 0, checker exit code: 0, verdict: OK
+
+Input
+
+4
+ax
+ay
+by
+bx
+
+Output
+Impossible
+Answer
+Impossible
+Checker Log
+ok valid answer.
+Test: #8, time: 78 ms., memory: 0 KB, exit code: 0, checker exit code: 0, verdict: OK
+
+Input
+
+4
+ax
+ay
+by
+bz
+
+Output
+abcdefghijklmnopqrstuvwxyz
+Answer
+abcdefghijklmnopqrstuvwxyz
+Checker Log
+ok valid answer.
+Test: #9, time: 93 ms., memory: 0 KB, exit code: 0, checker exit code: 0, verdict: OK
+
+Input
+
+1
+a
+
+Output
+abcdefghijklmnopqrstuvwxyz
+Answer
+abcdefghijklmnopqrstuvwxyz
+Checker Log
+ok valid answer.
+Test: #10, time: 77 ms., memory: 0 KB, exit code: 0, checker exit code: 0, verdict: OK
+Input
+1
+zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+Output
+abcdefghijklmnopqrstuvwxyz
+Answer
+abcdefghijklmnopqrstuvwxyz
+Checker Log
+ok valid answer.
+Test: #11, time: 109 ms., memory: 0 KB, exit code: 0, checker exit code: 0, verdict: OK
+Input
+100
+xgpuamkxkszhkbpphykinkezplvfjaqmopodotkrjzrimlvumuarenexcfycebeurgvjyospdhv
+yfvtvnrdyluacvrayggwnpnzijdifyerv
+aoalcgxovldqfzaorahdigyojknviaztpcmxlvovafhjphvshyfiqqtqbxjjmq
+gqjhwkcexecmdkmzakbzrkjwqdyuxdvoossjoatr
+xmbwxbwexnagmaygzyfnzpqftobtaotuayxmwvzllkujidhukzwzcltgqngguftuahalwvjwqncks
+zgzajkhyjujlkseszafzjmdtsbyldhylcgkyn
+vmhneqyjdugofklitxaoykfoqkzsznjyarkuprerivhubpehxmoyd
+kklbdnfhfxamotubelzvbozjaraefmlotftnq
+jolvuamahndekfdsqcfvmqbo
+bomjxrqsfskevfxphcqoqkbbomcyurwlrnhrhctntzlylvwulb...
+Output
+Impossible
+Answer
+Impossible
+Checker Log
+ok valid answer.
+Test: #12, time: 93 ms., memory: 0 KB, exit code: 0, checker exit code: 1, verdict: WRONG_ANSWER
+Input
+100
+adjcquqdqcsvixgwglwrrmkhdsbebbjvcgz
+aoalcgxovldqfzaorahdigyojknviaztpcmxlvovafhjphvshyfiqqtqbxjjmq
+bijtrgtxgzfcpuchdsmkvqrhgdiidnnunwsxscqqn
+bmxqnwdcyberszmofrwoc
+bomjxrqsfskevfxphcqoqkbbomcyurwlrnhrhctntzlylvwulbdkcdppgykichjtpukfnlxfcev
+bynjwjcrqayjpcijndyzmctzbaoqeugwrmhpkzvyygkovpckbzetshne
+cfhp
+cgdlozuqzwhfssrcxarcjflftmwngzonwfsvtukxvbsoubbbpbfwjfngelekpmoadizdsortkabmsw
+cgffiwrszzdbzjyhvgpnfsapufjqfespxbfljgtdgsmfeecqfwfvkweiacditmsnfaldcqlrycllmccmodlnlbkwv
+ciobbloxjxuozsuvqwphlhglufb...
+Output
+Impossible
+Answer
+abcdefghijklmnopqrstuvwxyz
+Checker Log
+wrong answer reference program find a solution, but you don't find it.
