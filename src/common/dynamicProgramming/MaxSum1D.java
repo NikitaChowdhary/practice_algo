@@ -4,7 +4,7 @@ public class MaxSum1D {
 
     static int maxSum = 0;
     public static void main(String[] args) {
-        int[] input = {-2, -3, 4, -1, -2, 1, 5, -3};
+        int[] input = {-2, -3, -3};
         System.out.println(getMaxSum(input));
     }
 
@@ -13,17 +13,19 @@ public class MaxSum1D {
         else {
             int maxSum = Integer.MIN_VALUE;
             int sumSoFar = 0;
-            int start = -1, finalStart = -1, finalEnd = -1;
+            int start = 0, finalStart = 0, finalEnd = 0;
 
             for (int i = 0; i< nums.length; i++) {
                 sumSoFar = sumSoFar + nums[i];
-                if (sumSoFar < 0) {
-                    sumSoFar = 0;
-                    start = i + 1;
-                } else if (sumSoFar > maxSum){
+                if (sumSoFar > maxSum){
                     maxSum = sumSoFar;
                     finalStart = start;
                     finalEnd = i;
+                }
+
+                if (sumSoFar < 0) {
+                    sumSoFar = 0;
+                    start = i + 1;
                 }
             }
             System.out.println("Final array index is " + finalStart + " " + finalEnd);
