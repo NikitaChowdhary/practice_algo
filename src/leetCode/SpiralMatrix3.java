@@ -17,43 +17,20 @@ public class SpiralMatrix3 {
         if (addToResult(R, C, result, seen, startRow, startCol)) seen++;
 
         while(seen < R*C) {
-
-
-            int y = 1;
-            while(y <= maxCellToVisit) {
-
-                if (addToResult(R, C, result, seen, startRow, ++startCol))
-                    seen++;
-                y++;
+            for (int i = 0; i<maxCellToVisit; i++) {
+                if (addToResult(R, C, result, seen, startRow, ++startCol)) seen++;
             }
-
-            int x = 1;
-            while(x <= maxCellToVisit) {
-                startRow++;
-                if (addToResult(R, C, result, seen, startRow, startCol))
-                    seen++;
-                x++;
+            for (int i = 0; i<maxCellToVisit; i++) {
+                if (addToResult(R, C, result, seen, ++startRow, startCol)) seen++;
             }
             maxCellToVisit++;
-            y = 0;
-            x = 0;
 
-
-            while(y < maxCellToVisit) {
-                startCol--;
-                if (addToResult(R, C, result, seen, startRow, startCol)) {
-                    seen++;
-                }
-                y++;
+            for (int i = 0; i < maxCellToVisit; i++) {
+                if (addToResult(R, C, result, seen, startRow, --startCol)) seen++;
             }
 
-            while(x < maxCellToVisit) {
-                startRow--;
-                if (addToResult(R, C, result, seen, startRow, startCol)) {
-                    seen++;
-                }
-
-                x++;
+            for (int i = 0; i < maxCellToVisit; i++) {
+                if (addToResult(R, C, result, seen, --startRow, startCol)) seen++;
             }
             maxCellToVisit++;
         }
