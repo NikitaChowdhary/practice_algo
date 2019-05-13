@@ -5,34 +5,76 @@ package leetCode;
  */
 public class SpiralMatrix3 {
 
-    public int[][] spiralMatrixIII(int R, int C, int r0, int c0) {
+    public static int[][] spiralMatrixIII(int R, int C, int r0, int c0) {
         int[][] result = new int[R*C][2];
         if (R*C == 0) return result;
 
-        boolean[][] seen = new boolean[R][C];
-        int[] rowDiff = {0, 1, 0, -1};
-        int[] colDiff = {1, 0, -1, 0};
+        int seen = 0;
 
-        int startRow = r0, startCol = c0, diffIndex = 0;
-        for (int i = 0; i< R*C; i++) {
-            result[i][0] = startRow;
-            result[i][1] = startCol;
+        int maxCellToVisit = 1;
+        int startRow = r0;
+        int startCol = c0;
+        if (addToResult(R, C, result, seen, startRow, startCol)) seen++;
 
-            seen[startRow][startCol] = true;
+        while(seen < R*C) {
 
-            int currenRow = startRow + rowDiff[diffIndex];
-            int currentCol = startCol + colDiff[diffIndex];
 
-            if (currenRow >=0 && currenRow < R && currentCol >= 0 && currentCol < C && !seen[currenRow][currentCol]) {
-                diffIndex = (diffIndex + 1) % 4;
-                startRow += rowDiff[diffIndex];
-                startCol += colDiff[diffIndex];
+            int y = 1;
+            while(y <= maxCellToVisit) {
 
-            } else {
-                startRow = currenRow;
-                startCol = currentCol;
+                if (addToResult(R, C, result, seen, startRow, ++startCol))
+                    seen++;
+                y++;
             }
+
+            int x = 1;
+            while(x <= maxCellToVisit) {
+                startRow++;
+                if (addToResult(R, C, result, seen, startRow, startCol))
+                    seen++;
+                x++;
+            }
+            maxCellToVisit++;
+            y = 0;
+            x = 0;
+
+
+            while(y < maxCellToVisit) {
+                startCol--;
+                if (addToResult(R, C, result, seen, startRow, startCol)) {
+                    seen++;
+                }
+                y++;
+            }
+
+            while(x < maxCellToVisit) {
+                startRow--;
+                if (addToResult(R, C, result, seen, startRow, startCol)) {
+                    seen++;
+                }
+
+                x++;
+            }
+            maxCellToVisit++;
         }
         return result;
+    }
+
+    private static boolean addToResult(int R, int C, int[][] result, int pos, int startRow, int startCol) {
+//        pos++;
+        if (startRow >=0 && startRow < R && startCol>=0 && startCol < C && pos < R*C) {
+            result[pos][0] = startRow;
+            result[pos][1] = startCol;
+            return true;
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        int[][] res = spiralMatrixIII(5, 6, 1, 4);
+
+        for (int i = 0; i< res.length; i++) {
+            System.out.print("[ " + res[i][0] + ", " + res[i][1] + " ];");
+        }
     }
 }
