@@ -5,6 +5,14 @@ import java.util.*;
 
 /**
  * https://leetcode.com/problems/k-closest-points-to-origin/
+ *
+ * O(n log(n))
+ *
+ * log n for inserting a value in TreeMap
+ * TreeMap O(logn) -- since the underlying structure is a red-black tree.
+ *
+ *
+ *  NO IDEA WHY I USED SORTEDMAP HERE, I HAD MAX HEAP IN MIND WHICH SHOULD HAVE BEEN PRIORITY QUEUE
  */
 
 
