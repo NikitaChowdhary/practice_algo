@@ -29,24 +29,28 @@ public class LetterCombinationOfPhone {
         if (digits.isEmpty()) return result;
          // Some code here
         
-        generateCombinations(digits, 0, "");
+        generateCombinations(digits, 0, result);
 
         
         return combinations;
     }
 
-    private static void generateCombinations(String digits, int i, String result) {
+    private static void generateCombinations(String digits, int i, List<String> result) {
         if (i == digits.length()) {
-            combinations.add(result);
+            combinations.addAll(result);
             return;
         }
         List<String>  temp = new ArrayList<>();
         List<String> values = mapping.get(digits.charAt(i) - '0');
-        for (String val: values) {
-            String letter = result + val;
-            generateCombinations(digits, i+1, letter);
+        if (result.isEmpty()) temp.addAll(values);
+        else {
+            for (String val: values) {
+                for (String r: result) {
+                    temp.add(r + val);
+                }
+            }
         }
-
+        generateCombinations(digits, i+1, temp);
     }
 
     public static void main(String[] args) {
