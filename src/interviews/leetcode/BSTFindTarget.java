@@ -1,9 +1,7 @@
-package leetCode.interviews;
+package interviews.leetcode;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * Given a Binary Search Tree and a target number,

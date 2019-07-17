@@ -1,4 +1,4 @@
-package leetCode.interviews;
+package interviews.leetcode;
 
 public class Inorder {
 

@@ -1,4 +1,4 @@
-package leetCode.interviews;
+package interviews.leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
