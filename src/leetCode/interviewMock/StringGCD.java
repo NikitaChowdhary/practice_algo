@@ -1,4 +1,4 @@
-package interviews.leetcode;
+package leetCode.interviewMock;
 
 /**
  * For strings S and T, we say "T divides S" if and only if S = T + ... + T  (T concatenated with itself 1 or more times)

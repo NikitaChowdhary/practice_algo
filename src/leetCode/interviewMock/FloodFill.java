@@ -1,4 +1,4 @@
-package interviews.leetcode;
+package leetCode.interviewMock;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
