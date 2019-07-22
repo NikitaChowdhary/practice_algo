@@ -1,5 +1,8 @@
 package leetCode.interviewMock;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Given an array nums and a target value k, find the maximum length of a subarray that sums to k. If there isn't one, return 0 instead.
  */
@@ -7,31 +10,42 @@ public class MaxSubArrayLength {
 
     public static void main(String[] args) {
         Solution sol = new Solution();
-        int[] inp = {0,0};
+        int[] inp = {1, -1, 5, -2, 3};
 
-        System.out.println(sol.maxSubArrayLen(inp, 0));
+        System.out.println(sol.maxSubArrayLen(inp, 3));
     }
 
     public static class Solution {
-        int maxLength = 0;
+
+        /**
         public int maxSubArrayLen(int[] nums, int k) {
-            int currentSum = 0;
+            int maxLength = 0;
             for (int i = 0; i< nums.length; i++) {
-                getLengthsCount(nums, k, i, i, currentSum);
-                currentSum = 0;
+                int currentSum = 0;
+                for (int j = i; j < nums.length; j++) {
+                    currentSum += nums[j];
+                    if (currentSum == k) {
+                        maxLength = Math.max(maxLength, j - i + 1);
+                    }
+                }
             }
             return maxLength;
         }
+         **/
 
-        private void getLengthsCount(int[] nums, int k, int start, int end, int currentSum) {
-            if (start <= end && end < nums.length) {
-                currentSum = currentSum + nums[end];
-                if (currentSum == k)
-                    maxLength = Math.max(maxLength, end - start + 1);
-//                else
-                    getLengthsCount(nums, k, start, end + 1, currentSum);
+        public int maxSubArrayLen(int[] nums, int k) {
+            Map<Integer, Integer> map = new HashMap<>();
+            int sum = 0, maxLength = 0;
+            map.put(0, -1);
+            for (int i = 0; i< nums.length; i++) {
+                sum += nums[i];
+
+                if (map.containsKey(sum - k))
+                    maxLength = Math.max(maxLength, i - map.get(sum - k));
+                if (!map.containsKey(sum))
+                    map.put(sum, i);
             }
-
+            return maxLength;
         }
     }
 }
